@@ -52,7 +52,7 @@ module.exports = (sequelize, DataTypes) => {
     pendingUser.password = hash; 
   }); 
 
-  user.prototype.validatePassword = function(typedPassword) {
+  user.prototype.validPassword = function(typedPassword) {
     let isCorrectPassword = bcrypt.compareSync(typedPassword, this.password);
 
     return isCorrectPassword;
